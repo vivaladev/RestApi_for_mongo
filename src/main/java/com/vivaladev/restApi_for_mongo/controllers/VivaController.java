@@ -4,6 +4,7 @@ import com.vivaladev.restApi_for_mongo.entity.DefaultEntity;
 import com.vivaladev.restApi_for_mongo.services.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -19,7 +20,7 @@ public class VivaController {
     }
 
     @RequestMapping(value = "/get/defaultentity")
-    public DefaultEntity getDefaultEntity() {
-        return new DefaultEntity();
+    public @ResponseBody DefaultEntity getDefaultEntity() {
+        return restService.getDefaultEntity();
     }
 }
