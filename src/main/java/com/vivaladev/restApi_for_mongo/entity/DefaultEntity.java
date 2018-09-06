@@ -7,7 +7,11 @@ public class DefaultEntity {
 
     private String helloWorld;
 
-    public DefaultEntity() {
-        this.helloWorld = "Hello Springframework";
+    public DefaultEntity(){
+        this.helloWorld = "Default entity.";
+    }
+
+    public DefaultEntity(String param) {
+        this.helloWorld = param;
     }
 }
