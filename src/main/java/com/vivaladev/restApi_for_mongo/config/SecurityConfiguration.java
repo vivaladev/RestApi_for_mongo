@@ -16,7 +16,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/css/**", "/fonts/**", "/images/**", "/js/**",
 //                Disable security for main api request
-                "/viva/1/**", "/error");
+                "/viva/**", "/error");
     }
 
     @Override

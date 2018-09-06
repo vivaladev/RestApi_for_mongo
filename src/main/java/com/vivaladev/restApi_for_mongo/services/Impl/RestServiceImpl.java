@@ -14,4 +14,8 @@ public class RestServiceImpl implements RestService {
         return new DefaultEntity();
     }
 
+    @Override
+    public DefaultEntity getDefaultEntityWithParam(String param){
+        return new DefaultEntity(param);
+    }
 }
