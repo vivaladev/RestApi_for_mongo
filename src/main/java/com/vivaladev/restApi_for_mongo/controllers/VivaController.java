@@ -20,6 +20,6 @@ public class VivaController {
 
     @RequestMapping(value = "/get/defaultentity")
     public DefaultEntity getDefaultEntity() {
-        return new DefaultEntity();
+        return restService.getDefaultEntity();
     }
 }
