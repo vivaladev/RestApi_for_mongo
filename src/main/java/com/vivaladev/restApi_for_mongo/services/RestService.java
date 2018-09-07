@@ -1,8 +1,11 @@
 package com.vivaladev.restApi_for_mongo.services;
 
-import com.vivaladev.restApi_for_mongo.entity.DefaultEntity;
+import com.vivaladev.restApi_for_mongo.entity.DefaultGetEntity;
+import com.vivaladev.restApi_for_mongo.entity.DefaultPostEntity;
 
 public interface RestService {
 
-    DefaultEntity getDefaultEntity();
+    DefaultGetEntity getGetDefaultEntity();
+
+    DefaultPostEntity getPostDefaultEntity(DefaultPostEntity postEntity);
 }

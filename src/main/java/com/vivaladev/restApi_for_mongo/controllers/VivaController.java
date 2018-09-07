@@ -1,12 +1,10 @@
 package com.vivaladev.restApi_for_mongo.controllers;
 
-import com.vivaladev.restApi_for_mongo.entity.DefaultEntity;
+import com.vivaladev.restApi_for_mongo.entity.DefaultGetEntity;
+import com.vivaladev.restApi_for_mongo.entity.DefaultPostEntity;
 import com.vivaladev.restApi_for_mongo.services.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -21,7 +19,12 @@ public class VivaController {
     }
 
     @GetMapping(value = "/get/defaultentity")
-    public DefaultEntity getDefaultEntity() {
-        return restService.getDefaultEntity();
+    public DefaultGetEntity getGetDefaultEntity() {
+        return restService.getGetDefaultEntity();
+    }
+
+    @PostMapping(value = "/get/post/get/postentity")
+    public DefaultPostEntity getPostDefaultEntity(@RequestBody DefaultPostEntity postEntity){
+        return restService.getPostDefaultEntity(postEntity);
     }
 }

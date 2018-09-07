@@ -3,11 +3,11 @@ package com.vivaladev.restApi_for_mongo.entity;
 import lombok.Data;
 
 @Data
-public class DefaultEntity {
+public class DefaultGetEntity {
 
     private String helloWorld;
 
-    public DefaultEntity() {
+    public DefaultGetEntity() {
         this.helloWorld = "Hello Springframework";
     }
 }
