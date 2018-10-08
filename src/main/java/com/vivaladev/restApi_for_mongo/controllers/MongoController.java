@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/mongotest")
 public class MongoController {
@@ -32,14 +33,16 @@ public class MongoController {
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.PUT)
-    public MongoEntity editEntityById(@Valid @RequestBody MongoEntity entity, @PathVariable String id){
+    public MongoEntity editEntityById(@Valid @RequestBody MongoEntity entity, @PathVariable("id") String id){
         entity.set_id(id);
         repository.save(entity);
         return entity;
     }
 
     @RequestMapping(value = "/remove/{id}", method = RequestMethod.DELETE)
-    public void removeEntity(@PathVariable String id){
-        repository.delete(repository.findBy_id(id));
+    public String removeEntity(@PathVariable String id){
+        MongoEntity entity = repository.findBy_id(id);
+        repository.delete(entity);
+        return entity.get_id();
     }
 }
